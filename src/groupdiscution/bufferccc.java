@@ -1,0 +1,38 @@
+package groupdiscution;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class bufferccc {
+
+    public static void main(String[] args) {
+
+String st ="";
+        FileReader file =null;
+        BufferedReader bfile = null;
+
+        try {
+            file= new FileReader("/Users/user/Documents/GroupDiscussion/src/groupdiscution/reader.txt");
+            bfile =new BufferedReader(file);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        try {
+            while ((st=bfile.readLine())!=null){
+                System.out.println(st);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (file !=null){
+                file=null;
+            }if (bfile !=null){
+                bfile=null;
+            }
+        }
+
+
+    }
+}
